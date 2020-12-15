@@ -25,5 +25,9 @@ COMPILING INSTRUCTIONS (from local folder 'Code'): -----------------------------
 gfortran -g -fcheck=all -Wall -fbacktrace module.f90 main.f90 r1279.o ran2.o secs.o -o main.exe
 
 ./main.exe (execution)
+
+The output is a .csv file with 2 columns. The first one are the energy bins, 
+and the second one correspond to the logarithm of the states density corresponding to 
+the given energy.
     
 
