@@ -17,7 +17,8 @@ CONTENTS of the 'wang-landau' folder: --------------------------------
     'ln_g_N10.png', 'ln_g_N12.png', 'ln_g_N14.png'  (Plots of the ln(states density(E)) .vs. E)
     
   'Scripts'
-    'ln_g.gnu' (For the output visualization)
+    'ln_g.gnu' (For the output visualization)  Change the filename and 'N = 10' 
+                                               for the desired size
 
 
 COMPILING INSTRUCTIONS (from local folder 'Code'): ------------------------------------------------
