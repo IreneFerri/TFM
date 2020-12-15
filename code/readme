@@ -14,7 +14,7 @@ CONTENTS of the 'wang-landau' folder: --------------------------------
     'r1279.o', 'ran2.o', secs.o' (random generator files)
 
   'Images' (subfolder):
-    'ln_g_N10', 'ln_g_N12', 'ln_g_N14', 'ln_g_N16' (Plots of the ln(states density(E)) .vs. E)
+    'ln_g_N10.png', 'ln_g_N12.png', 'ln_g_N14.png'  (Plots of the ln(states density(E)) .vs. E)
     
   'Scripts'
     'ln_g.gnu' (For the output visualization)
