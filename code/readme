@@ -3,7 +3,7 @@
 *****  LANDAU WANG ALGORITHM FOR THE ALPHA-3-STATES MODEL **************
 ************************************************************************
 
-CONTENTS of the 'alpha3states_wl' folder: --------------------------------
+CONTENTS of the 'wang-landau' folder: --------------------------------
 
   'Code' (subfolder):
     'main.f90'
