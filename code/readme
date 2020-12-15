@@ -8,7 +8,7 @@ CONTENTS of the 'wang-landau' folder: --------------------------------
   'Code' (subfolder):
     'main.f90'
     'module.f90'
-    'input.dat' (output name: nom, size: N, random seed: iseed, initial modifier: ln_f, 
+    'input.dat' (output name: nom, size: N (must be even), random seed: iseed, initial modifier: ln_f, 
                  alpha value: alpha, number of MC attempts: MCtot, flatness tolerance: tol, 
                  modifier threshold: eps, numerical tolerance: eps2))
     'r1279.o', 'ran2.o', secs.o' (random generator files)
