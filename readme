@@ -5,22 +5,22 @@
 
 The program has a bug/problem descibed in 'issues', and is not able 
 to visit all the energy bins of the hisgram for a number of agents 
-N > 14
+N > 14.
 
 CONTENTS of the 'wang-landau' folder: --------------------------------
 
-  'Code' (subfolder):
-    'main.f90'
-    'module.f90'
-    'input.dat' (output name: nom, size: N (must be even), random seed: iseed, initial modifier: ln_f, 
+*  'Code' (subfolder):
+     'main.f90'
+     'module.f90'
+     'input.dat' (output name: nom, size: N (must be even), random seed: iseed, initial modifier: ln_f, 
                  alpha value: alpha, number of MC attempts: MCtot, flatness tolerance: tol, 
                  modifier threshold: eps, numerical tolerance: eps2))
-    'r1279.o', 'ran2.o', secs.o' (random generator files)
+     'r1279.o', 'ran2.o', secs.o' (random generator files)
 
-  'Images' (subfolder):
+*  'Images' (subfolder):
     'ln_g_N10.png', 'ln_g_N12.png', 'ln_g_N14.png'  (Plots of the ln(states density(E)) .vs. E)
     
-  'Scripts'
+*  'Scripts'
     'ln_g.gnu' (For the output visualization)  Change the filename and 'N = 10' 
                                                for the desired size
 
