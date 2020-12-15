@@ -1,8 +1,29 @@
-Change the input data in the file landau_wang.dat (The minimum energy E0 is recalculated inside the program as N*(N-1)/2 in order to include the ground state)
 
-The number of energy bins is given by E_tot
+************************************************************************
+*****  LANDAU WANG ALGORITHM FOR THE ALPHA-3-STATES MODEL **************
+************************************************************************
 
-Compile with gfortran -g -fcheck=all -Wall -fbacktrace  landau_wang.f90 r1279.o ran2.o secs.o -o landau_wang.exe
+CONTENTS of the 'alpha3states_wl' folder: --------------------------------
+
+  'Code' (subfolder):
+    'main.f90'
+    'module.f90'
+    'input.dat' (output name: nom, size: N, random seed: iseed, initial modifier: ln_f, 
+                 alpha value: alpha, number of MC attempts: MCtot, flatness tolerance: tol, 
+                 modifier threshold: eps, numerical tolerance: eps2))
+    'r1279.o', 'ran2.o', secs.o' (random generator files)
+
+  'Images' (subfolder):
+    'ln_g_N10', 'ln_g_N12', 'ln_g_N14', 'ln_g_N16' (Plots of the ln(states density(E)) .vs. E)
+    
+  'Scripts'
+    'ln_g.gnu' (For the output visualization)
 
 
+COMPILING INSTRUCTIONS (from local folder 'Code'): ------------------------------------------------
+
+gfortran -g -fcheck=all -Wall -fbacktrace module.f90 main.f90 r1279.o ran2.o secs.o -o main.exe
+
+./main.exe (execution)
+    
 
