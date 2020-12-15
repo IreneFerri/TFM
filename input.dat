@@ -1,0 +1,12 @@
+&DADES
+nom='wl'
+N=16
+iseed = 2559
+ln_f = 1.0
+alpha = 0.2
+MCtot=100000
+check_H = 1
+tol = 0.8
+eps = 0.000001
+eps2 = 0.0000001
+&END

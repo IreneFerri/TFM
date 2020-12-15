@@ -1,0 +1,8 @@
+Change the input data in the file landau_wang.dat (The minimum energy E0 is recalculated inside the program as N*(N-1)/2 in order to include the ground state)
+
+The number of energy bins is given by E_tot
+
+Compile with gfortran -g -fcheck=all -Wall -fbacktrace  landau_wang.f90 r1279.o ran2.o secs.o -o landau_wang.exe
+
+
+
