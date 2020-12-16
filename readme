@@ -4,7 +4,7 @@
 ************************************************************************
 
 The program has a bug/problem descibed in 'issues', and is not able 
-to visit all the energy bins of the hisgram for a number of agents 
+to visit all the energy bins of the histogram for a number of agents 
 N > 14.
 
 CONTENTS of the 'wang-landau' folder: --------------------------------
