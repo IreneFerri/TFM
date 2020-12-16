@@ -11,9 +11,10 @@
 ! The program proposes sequencial changes and uses the histogram entropic
 ! Landau-Wang algorithm to visit all states and find the first order transition
 ! of the system for alpha above the tricritical point.
-! After obtaining the states density array it uses it to calculate the
-! canonical probability, the partition function and the average energy for 
-! different temperatures and stores them in a file
+! It stores the energies and the logarithm of the states density array in an 
+! external file.
+!
+! N must be even
 ! 
 ! -----------------------------------------------------------------------------
 ! -----------------------------------------------------------------------------
@@ -34,7 +35,7 @@
       integer*16 :: h_zero, b
       integer*16 :: E_bin, new_E_bin 
       integer*8 :: MCtot
-      real*16 :: DE,energy, new_energy, p_new_energy
+      real*16 :: DE,energy, new_energy 
       integer*16 :: num0, num1, num_1, new_num0, new_num1, new_num_1, n1, n_1, n0
       integer*16 :: spin, new_spin, p_g_dim , g_dim, chosen_agent_spin
       integer*16 :: N2
@@ -106,13 +107,13 @@
         unique(i) = min_E_val
       enddo
       allocate(final_E_array(i), source=unique(1:i))  ! It stores all possible values of energy, non degenerated
-      g_dim = size(final_E_array)
+      g_dim = size(final_E_array)                     ! and sorted from smallest to largest
 
       do i = 1, g_dim
         print*, final_E_array(i)
       enddo
 
-!                                                       and sorted from smallest to largest
+!                                                       
 ! - Corresponding energy index (E_bin) ---------------------------------------------
 !    
       E_bin = find_index(g_dim,final_E_array, energy, 1, g_dim)  ! Find the bin corresponding to the current energy
@@ -140,14 +141,13 @@
         do k = 1, check_H ! ------------- HISTOGRAM LOOP
           istep = istep + 1
           DO i = 1,N         ! Each MC has N flip attempts -------------
-!            print*, spins, energy, E_bin, '**',chosen_agent, b
             counter = counter + 1
             call system_evolves(N, spins, alpha2, num1, num_1, num0, & ! input
                                 new_num1, new_num_1, new_num0, DE,chosen_agent, new_spin, b) ! Output
 !  Accept or reject ------------------------------------------------------------------------------
             chosen_agent_spin = spins(chosen_agent)
-            p_new_energy = energy + DE
-            new_E_bin =find_index(g_dim, final_E_array,p_new_energy,1,g_dim)  !Find the bin corres    ponding to the new energy
+            new_energy = energy + DE
+            new_E_bin =find_index(g_dim, final_E_array,new_energy,1,g_dim)  !Find the bin corres    ponding to the new energy
             call acceptance(g_dim,log_g,Ef,E0,&
                             num1, num_1, num0, new_num1, new_num_1, new_num0, &
                             chosen_agent_spin, new_spin, E_bin, new_E_bin, energy, DE, & ! Input
@@ -189,14 +189,6 @@
       enddo
       close(11)
 !----------------------------------------------------------------------
-!  Normalization 
-!------------------------------------------------------------------
-!      max_log_g = maxval(log_g)
-!      log_g = log_g - max_log_g
-!      g = exp((log_g))/sum(log_g)
-!
-!      C = 2.0/g(1)  ! g(E_min = 2) ! For alpha<1 
-!      g = C*g
 !
       CALL CPU_TIME(TIME2)            ! Time control
       CALL FDATE(DATE)
