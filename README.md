@@ -32,17 +32,22 @@ CONTENTS of the 'alpha3states_wl' folder: --------------------------------
       'wl_N100.png' (A comparison of the results obtained for N=100 with the 'dos_mean.py' and the second Wang-Landau program)
     
  *  'Scripts'
-      'ln_g.gnu' (For the output visualization) Change the filename and 'N = 10' 
-                                                for the desired size
+      'ln_g.gnu' (For the output visualization of the first Wang-Landau code) Change the filename and 'N = 10' 
+                 for the desired size
+      'ln_g_N14_a0.2.gnu' and 'ln_g_N100_a0.2.gnu' (For the output visualization of the second Wang-Landau code)
+                                                    Each one is specific for a size N and it selects the
+                                                    appropiate yrange so the figure can be observed.
+                                                    
+      'dos_ln_g_N14_a0.2.gnu' and 'dos_ln_g_N100_a0.2.gnu' (For the output visualization of the python code)
 
 
 COMPILING INSTRUCTIONS (from local folder 'Code'): ------------------------------------------------
 
 gfortran -g -fcheck=all -Wall -fbacktrace module.f90 main.f90 r1279.o ran2.o secs.o -o main.exe
+./main.exe (execution)  (Same for main_2.f90)
 
-./main.exe (execution)
     
-The output is a .csv file with 2 columns. The first one are the energy bins, 
+The outputs are  .csv files with 2 columns. The first one are the energy bins, 
 and the second one correspond to the logarithm of the states density corresponding to 
 the given energy.
 
