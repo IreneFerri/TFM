@@ -30,6 +30,7 @@ CONTENTS of the 'alpha3states_wl' folder: --------------------------------
       'ln_g_N10.png', 'ln_g_N12.png', 'ln_g_N14.png' (Plots of the ln(states density(E)) .vs. E)
       'wl_N14.png' (A comparison of the results obtained for N=14 with the three programs)
       'wl_N100.png' (A comparison of the results obtained for N=100 with the 'dos_mean.py' and the second Wang-Landau program)
+      'exe_times.png' (Execution times for the different programs for diffrerent values of N and alpha = 0.2)
     
  *  'Scripts'
       'ln_g.gnu' (For the output visualization of the first Wang-Landau code) Change the filename and 'N = 10' 
