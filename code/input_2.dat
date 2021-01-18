@@ -1,0 +1,12 @@
+&DADES
+nom='wl_2'
+N=200
+iseed = 2559
+ln_f = 1.0
+alpha = 0.2
+MCtot=100000000
+check_H = 1000
+tol = 0.8
+eps = 0.0000001
+eps2 = 0.0000001
+&END
